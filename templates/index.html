@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Quickstart</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='1636974049439.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='1636974049439.png') }}" class="icon" />
+  <h3>New Goals with Dobee ML  !</h3>
+  <form action="/" method="post">
+    <label for="goals">What are your current goals?</label>
+    <input type="text" name="goals" required>
+  
+    <label for="progress">What progress have you made towards achieving your goals?</label>
+    <input type="text" name="progress" required>
+  
+    <input type="submit" style="rel="shortcut icon
+    href="{{ url_for('static', filename='1636974049439.png') }}"  value="DoBee">
+  </form>
+  {% if result %}
+  <div class="result">
+    <p>Here are some goal suggestions based on your input:</p>
+    
+    <ul>
+      {% for suggestion in result.split('\n') %}
+      
+      
+        <li>{{ suggestion }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
